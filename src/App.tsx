@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import Layout from './application/Layout';
+import './assets/styles/App.scss';
+import { store } from '@store/index';
 
 function App() {
     return (
-        <div>
-            <h1> Hello, this is a react typescript project starter template</h1>
-            <p>built with love by luminous</p>
-        </div>
+        <BrowserRouter>
+            <Provider store={store}>
+                <Suspense fallback={<div>loading...</div>}>
+                    <Layout />
+                </Suspense>
+            </Provider>
+        </BrowserRouter>
     );
 }
 

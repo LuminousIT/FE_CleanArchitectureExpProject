@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+$primary-black: #30362f;
+$secondary-black: #7e7e7e;
+$primary-blue: #2d75b6;
+$primary-white: #fffcf9;
+$primary-orange: #ec7c30;
+$main-blue: #255f93;
+
+$small: 470px;
+$medium: 900px;
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-layout {
+    position: relative;
+}
+
+.sidebar {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: $primary-blue;
+    transition: 300ms;
+}
+
+.navbar {
+    padding: 15px 40px;
+    background-color: $main-blue;
+    
+    @media screen and (max-width: $small) {
+        padding: 15px 10px;
+    }
+}
+
+.submenu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: $primary-white;
+    padding: 12 20;
+    border-left: 3px solid $primary-orange;
+    margin: 12px 0px;
+
+    &:hover {
+        background-color: $primary-orange;
+        color: $primary-white;
+    }
+
+    .title {
+        margin-left: 10;
+        margin-right: 20;
+    }
+
+   
+}
+
+.sub-submenu {
+    border-left: 0;
+    margin-left: 25;
+    font-size: .9em;
+}
+
+// Authentication | Login
+.loginContainer {
+    border: 2px solid $primary-blue;
+    padding: 15px 0;
+    border-radius: 15px;
+
+    .header {
+       text-align: center;
+       color: #ec7c30;
+    }
+
+    .form-box {
+        // border: 2px solid black;
+        width: 100%;
+        text-align: center;
+        margin: 15px 0;
+        
+        .form-input {
+            width: 100%;
+        }
+
+        .form-btn {
+            width: 100%;
+            background-color: $primary-blue;
+            color: #fffcf9;
+
+            &:hover {
+                background-color: #3b89ce;
+                color: #fffcf9;
+            }
+        }
+    }
+    
+}

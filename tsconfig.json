@@ -16,7 +16,16 @@
         "forceConsistentCasingInFileNames": true,
         "resolveJsonModule": true,
         "allowJs": true,
-        "checkJs": true,   
+        "checkJs": true,
+        "baseUrl": "./",
+        "paths": {
+            "Pages/*": ["src/presentation/Pages/*"],
+            "@GlobalComponents/*": ["src/presentation/GlobalComponents/*"],
+            "@store/*": ["src/infrastructure/store/*"],
+            "@api/*": ["src/infrastructure/api/*"],
+            "@domain/*": ["src/domain/*"],
+            "@layout/*": ["src/application/Layout/*"],
+        }   
     },
     "include": ["src/**/*"],
     "exclude": ["node_modules","build"]
