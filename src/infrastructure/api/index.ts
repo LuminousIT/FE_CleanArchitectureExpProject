@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const baseURL = process.env.NODE_ENV === 'development' ? 'https://apis.touchandpay.me/tojue/' : '';
+// baseUrl should go in env file and production url should be updated accordingly.
+const baseURL =
+    process.env.NODE_ENV === 'development'
+        ? 'https://apis.touchandpay.me/tojue/'
+        : 'https://apis.touchandpay.me/tojue/';
 
 const axiosInstance = axios.create({
     baseURL: baseURL,
@@ -11,7 +15,7 @@ axiosInstance.interceptors.request.use((config) => {
 
     if (token) {
         config.headers = {
-            Authorization: `bearer ${token}`,
+            token: `bearer ${token}`,
             'Content-Type': 'Application/json',
         };
     }

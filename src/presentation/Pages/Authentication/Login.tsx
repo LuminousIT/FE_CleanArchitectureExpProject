@@ -9,7 +9,6 @@ import {
     FormLabel,
     FormHelperText,
     Button,
-    Progress,
     useToast,
 } from '@chakra-ui/react';
 import logo from '../../../assets/images/logo.png';
@@ -18,11 +17,9 @@ import * as yup from 'yup';
 import { LoginPayload } from '@domain/auth';
 import { loginUserAction } from '@store/actions/AuthenticationActions';
 import { useAppDispatch } from '@store/useAppDispatch';
-import { useSelector } from 'react-redux';
-import { RootState } from '@store/index';
+
 import { useNavigate } from 'react-router';
 import { LOGIN_USER } from '@domain/constants';
-import { useEffect } from 'react';
 import { useAppSelector } from '@store/useAppSelector';
 
 function Login() {
@@ -56,9 +53,7 @@ function Login() {
 
     return (
         <Container centerContent className="loginContainer">
-            <Box>
-                <Image src={logo} alt="tap logo" width={50} height={50} />
-            </Box>
+            <Box>{/* <Image src={logo} alt="tap logo" width={50} height={50} /> */}</Box>
             <Box width="80%">
                 <Heading as="h2" size="lg" className="header">
                     Tools Manager
@@ -93,7 +88,7 @@ function Login() {
                             isLoading={isLoading}
                             loadingText="Loading..."
                         >
-                            Submit
+                            {isLoading ? 'Loading...' : 'Submit'}
                         </Button>
                     </form>
                 </Box>

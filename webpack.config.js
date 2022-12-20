@@ -49,7 +49,8 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
-
+        // modules: ['.', 'node_modules'],
+        modules: [path.resolve(__dirname, ''), 'node_modules'],
         alias: {
             Pages: path.resolve(__dirname, 'src/presentation/Pages/'),
             '@GlobalComponents': path.resolve(__dirname, 'src/presentation/GlobalComponents/'),

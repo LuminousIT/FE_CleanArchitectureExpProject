@@ -3,7 +3,7 @@ import { RequestPayload, ResponsePayload } from './generalSchema';
 // REDUCER STATE
 export interface IAuthState {
     isLoading: boolean;
-    isAuthenticated: boolean;
+    isAuthenticated?: boolean;
     error: null | string;
 }
 

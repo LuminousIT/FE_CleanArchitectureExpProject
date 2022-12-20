@@ -18,8 +18,4 @@ export type ResponsePayload<T = null> = {
 export type IGenericReducerState<T = undefined> = {
     isLoading: boolean;
     error: null | string;
-} & (T extends undefined
-    ? {}
-    : {
-          data: T;
-      });
+} & (T extends undefined ? {} : T);

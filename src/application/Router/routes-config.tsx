@@ -3,12 +3,11 @@ import React, { lazy } from 'react';
 import AuthenticationLayout from '../Layout/Authentication';
 import MainLayout from '../Layout/MainLayout';
 import { Navigate, Outlet } from 'react-router-dom';
+import Login from 'Pages/Authentication/Login';
 
-const Login = lazy(() => import('Pages/Authentication/Login'));
 const Dashboard = lazy(() => import('Pages/Dashboard'));
 const Devices = lazy(() => import('Pages/DevicesManager/Devices'));
 const Cards = lazy(() => import('Pages/CardsManager/Cards'));
-const CardType = lazy(() => import('Pages/CardsManager/CardType'));
 const CardForm = lazy(() => import('Pages/CardsManager/CardForm'));
 const CardSetup = lazy(() => import('Pages/CardsManager/CardSetup'));
 const Syncher = lazy(() => import('Pages/Syncher'));
@@ -52,7 +51,6 @@ export const ROUTES: RouteProps[] = [
                     { path: '', element: <Cards /> },
                     { path: 'card-setup', element: <CardSetup /> },
                     { path: 'blocked-cards', element: <BlockedCards /> },
-                    { path: 'card-type', element: <CardType /> },
                     { path: 'card-form', element: <CardForm /> },
                 ],
             },
