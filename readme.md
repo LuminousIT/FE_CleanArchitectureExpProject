@@ -3,6 +3,10 @@
 Project by me. :) 
 (Olumide Samuel Oluwole)
 
+Authentication Credentials
+username: rashtell
+password: rashtell
+
 ### Base Setup
 The project base structure is set up without create react app. So I had to configure webpack, babel, plugins, compatibility with typescript and a host of other stuff that took a while. 
 
@@ -29,4 +33,4 @@ Turned out, it isn't all that a bad idea. Given react is a flexible library inst
 - Asset / Assets: images and styles (sass)
 - Domain: The typescript info folder. Everything that concerns the TS.
 - Infrastructure: The core of our application. In here, the network request and redux store is implemented
-- Presentation: Everything User Sees. 
+- Presentation: Everything User Sees.
