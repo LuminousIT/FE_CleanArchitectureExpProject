@@ -4,8 +4,8 @@ Project by me. :)
 (Olumide Samuel Oluwole)
 
 Authentication Credentials
-username: rashtell
-password: rashtell
+* username: rashtell
+* password: rashtell
 
 ### Base Setup
 The project base structure is set up without create react app. So I had to configure webpack, babel, plugins, compatibility with typescript and a host of other stuff that took a while. 
