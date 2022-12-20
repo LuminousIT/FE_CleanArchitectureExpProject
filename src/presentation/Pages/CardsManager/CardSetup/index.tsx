@@ -1,7 +1,13 @@
 import React from 'react';
+import PageContainer from '@GlobalComponents/PageContainer';
+import SetupTabs from './components/SetupTabs';
 
 function CardSetup() {
-    return <div>Card setup comes here Card type Card form card size</div>;
+    return (
+        <PageContainer>
+            <SetupTabs />
+        </PageContainer>
+    );
 }
 
 export default CardSetup;

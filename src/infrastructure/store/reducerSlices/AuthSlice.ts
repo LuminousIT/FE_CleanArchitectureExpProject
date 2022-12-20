@@ -3,6 +3,7 @@ import { LOGIN_USER } from '@domain/constants';
 import { ResponsePayload } from '@domain/generalSchema';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { loginUserAction } from '@store/actions/AuthenticationActions';
+import { errorRequestReducer, initializeRequestReducer } from '..';
 
 const initialState: IAuthState = {
     isLoading: false,
@@ -10,21 +11,10 @@ const initialState: IAuthState = {
     error: null,
 };
 
-const initializeRequestReducer = <T>(state: IAuthState, action: PayloadAction<T>) => {
-    state.isLoading = true;
-};
-
 const updateReducerAuth = (state: IAuthState, action: PayloadAction<LoginResponse | undefined>) => {
     const { type, payload } = action;
     state.isLoading = false;
     state.isAuthenticated = true;
-};
-
-const errorRequestReducer = (state: IAuthState, action: PayloadAction<any>) => {
-    const { type, payload } = action;
-
-    state.isLoading = false;
-    state.error = payload;
 };
 
 export const authenticationSlice = createSlice({

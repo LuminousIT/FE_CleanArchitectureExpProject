@@ -1,11 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link, useMatch, useLocation } from 'react-router-dom';
 import { Box } from '@chakra-ui/layout';
 import { SubMenuProps } from '@domain/layout';
 import { useState } from 'react';
 
 const SubMenu: React.FC<SubMenuProps> = ({ item }) => {
     const [showSubNav, setShowSubNav] = useState<boolean>(false);
+    const match = useLocation();
 
     const handleShowOptions = () => {
         if (item.children) setShowSubNav(!showSubNav);
@@ -13,7 +14,11 @@ const SubMenu: React.FC<SubMenuProps> = ({ item }) => {
 
     return (
         <>
-            <NavLink to={item.path} onClick={handleShowOptions}>
+            <NavLink
+                to={item.path}
+                onClick={handleShowOptions}
+                style={({ isActive }) => ({ backgroundColor: isActive ? 'green' : 'red' })}
+            >
                 <Box className="submenu">
                     {item.icon}
                     <Box className="title">{item.title}</Box>
